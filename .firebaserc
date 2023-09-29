@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "social-media-app-58850": {
+      "hosting": {
+        "social-media-app": [
+          "social-media-app-58850"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "social-media-app-58850"
+  }
+}
