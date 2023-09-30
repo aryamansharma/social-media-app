@@ -15,19 +15,18 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private auth: AuthService,
     private toastr: ToastrService
-  ) {
-    auth.getUser().subscribe((user) => {
+  ) {}
+
+  ngOnInit(): void {
+    this.auth.getUser().subscribe((user) => {
       console.log('user is ', user);
       this.email = user?.email;
     });
   }
 
-  ngOnInit(): void {}
-
   async handleSignOut() {
     try {
       await this.auth.signOut();
-
       this.router.navigateByUrl('/signin');
       this.toastr.info('Logout success');
       this.email = null;
